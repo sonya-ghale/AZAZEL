@@ -1,0 +1,111 @@
+:root{
+    --purple: rgb(123,31,162);
+    --violet: rgb(103,58,183);
+    --pink: rgb(244,143,177);
+}
+body{
+   display: grid;
+   height: 100vh;
+   place-items: center;
+    margin: 0px;
+    overflow: hidden;
+}
+.container{
+    border: 1px solid white;
+    background-color: black;
+    width: auto;
+    height: 100px;
+    text-align: center;
+border-radius: 10px;
+}
+h1{
+    color: white;
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: 100px;
+    margin: 20%;
+    padding: 20px;
+    text-align: center;
+}
+h1 > .magic{
+
+    display: inline-block;
+    position: relative;
+}
+h1 > .magic > .magic-star{
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left:var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+    animation: rotate 1000ms  linear infinite;
+}
+h1 > .magic > .magic-star{
+    --size: clamp(20px,1.5vw, 30px);
+}
+h1 > .magic > .magic-star > svg{
+    display: block;
+    opacity: 0.7px;
+}
+h1 > .magic > .magic-star > svg{
+    animation: rotate 1000ms  linear infinite;
+}
+h1 > .magic > .magic-star > svg > path{
+    fill:var(--violet);
+}
+/* h1 > .magic > .magic-star:first-of-type{
+    animation-delay: 0ms;
+}
+h1 > .magic > .magic-star:nth-of-type(2){
+    animation-delay: 300ms;
+}
+h1 > .magic > .magic-star:nth-of-type(3){
+    animation-delay: 600ms;
+} */
+
+@keyframes scale{
+    from, to{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+h1 > .magic > .magic-text{
+    /* this make background color to near letters */
+animation: background-pan 3s linear infinite ;
+    background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+);
+/* but this make only text color */
+background-size: 200%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+white-space: nowrap;
+}
+.magic-star:hover{
+
+}
+
+@keyframes background-pan{
+    from{
+        background-position: 0% center;
+    }
+    to{
+        background-position: -200% center;
+    }
+}
